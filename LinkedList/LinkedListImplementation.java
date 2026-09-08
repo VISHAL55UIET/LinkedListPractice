@@ -71,22 +71,29 @@ public class LinkedListImplementation {
 
     // 6. Insert at Position (1-based)
     static Node insertAtPosition(Node head, int val, int pos) {
+        if(pos==0){
+            insertAtBeginning(head,val);
+            return head;
+        }
+        if(pos==length(head)){
+            insertAtEnd(head,val);
+            return head;
+        }
+        if(pos>length(head)){
+         System.out.println("Invalid Position");
+         return head;
+        }
         Node newNode = new Node(val);
-
         if (pos == 1) {
             newNode.next = head;
             return newNode;
         }
-
         Node temp = head;
-
         for (int i = 1; i < pos - 1; i++) {
             temp = temp.next;
         }
-
         newNode.next = temp.next;
         temp.next = newNode;
-
         return head;
     }
 
