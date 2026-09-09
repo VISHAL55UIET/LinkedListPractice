@@ -24,7 +24,7 @@ public class LinkedListImplementation {
 
     // 2. Recursive Print
     static void recursivePrint(Node head) {
-        if (head == null) {
+        if (head == null) {    
             return;
         }
 
